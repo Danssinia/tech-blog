@@ -18,7 +18,7 @@ app.use(express.json())
 
 //setting uo the database DB
 const mongoose = require('mongoose')
-const dbURI = 'mongodb+srv://Admin:happynewyear@blogpage.lwgyyhd.mongodb.net/techblog?appName=BlogPage'
+const dbURI = process.env.MONGODB_URI
 mongoose.connect(dbURI)
     .then((result) => {
         app.listen(port, () => {
