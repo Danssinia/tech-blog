@@ -1,0 +1,17 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= title
+        link(rel="stylesheet", href="../css/style.css")
+    body 
+        include ../partials/header
+        main 
+            div.blog-container 
+                each blog in blogs
+                    a(href=`/blog-detail/${blog._id}`,class='blog-link') 
+                        div.blog-post 
+                            h1.blog-title= blog.title 
+                            p.blog-snippet= blog.snippet
+            div
+        include ../partials/footer

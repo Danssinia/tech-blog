@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Login | TechBlog
+    link(rel="stylesheet", href="/css/style.css")
+
+  body
+    include ../partials/header
+
+    .login-wrapper
+      .login-card
+        h2.login-heading Welcome Back
+
+        form.login-form(action="/login" method="POST")
+          .input-box
+            label(for="email") Email
+            input(type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email")
+            .error.email-error
+
+          .input-box
+            label(for="password") Password
+            input(type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password")
+            .error.password-error
+
+          button.login-btn(type="submit") Log In
+
+          .login-footer
+            p Don't have an account? 
+              a(href="/signup") Sign up here
+
+    include ../partials/footer
+
+    // Tiny flex fix so footer stays at bottom
+    style.
+      html, body { height: 100%; margin: 0; }
+      body { display: flex; flex-direction: column; }
+      main, .login-wrapper { flex: 1; }

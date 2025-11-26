@@ -1,0 +1,22 @@
+header.header
+  .container
+    // 1. LOGO – Left
+    a.logo(href="/") TechBlog
+
+    // 2. CENTERED MENU LINKS
+    nav.nav-center
+      ul.nav-list
+        li.nav-item: a.nav-link(href="/") Home
+        li.nav-item: a.nav-link(href="/about") About
+        li.nav-item: a.nav-link(href="/create") Create
+        //see my blogs if user is logged in
+        if isLoggedIn
+          li.nav-item: a.nav-link(href="/my-blogs") My Blogs
+
+    // 3. AUTH BUTTONS – Far Right
+    .auth-buttons
+      if isLoggedIn
+        a.btn.logout-btn(href="/logout") Log Out
+      else
+        a.btn(href="/login") Log In
+        a.btn(href="/signup") Sign Up

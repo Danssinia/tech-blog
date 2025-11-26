@@ -1,0 +1,30 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="../css/style.css")
+    body 
+include ../partials/header
+main 
+.signup-wrapper
+  .signup-card
+    h2.signup-heading Sign Up
+
+    form.signup-form(action="/signup" method="POST")
+      .input-box
+        label(for="email") Email
+        input(type="text" id="email" name="email" placeholder="you@example.com" required)
+        .error.email-error
+
+      .input-box
+        label(for="password") Password
+        input(type="password" id="password" name="password" placeholder="••••••••" required)
+        .error.password-error
+
+      button.signup-btn(type="submit") Create Account
+      .login-footer
+            p Already have an account? 
+              a(href="/login") Login here
+
+include ../partials/footer

@@ -1,0 +1,29 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= title 
+        link(rel="stylesheet", href="../css/style.css")
+    body 
+    include ../partials/header
+    main 
+block content
+  .create-container
+    h2.create-title Updaet a Blog Post
+    
+    form.create-form(action=`/updated-blog/${blog._id}` method="POST")
+      .form-group
+        label(for="title") Title
+        input#title(type="text" name="title" value= blog.title placeholder="Enter post title..." required)
+      
+      .form-group
+        label(for="snippet") Snippet
+        input#snippet(type="text" name="snippet" value= blog.snippet placeholder="Short description (shows in listings)..." required maxlength="200")
+      
+      .form-group
+        label(for="body") Body
+        textarea#body(name="body" rows="12"  placeholder="Write your full blog post here..."  required) #{blog.body}
+      
+      button.create-submit(type="submit") Update Post
+div
+      include ../partials/footer

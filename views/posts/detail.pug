@@ -1,0 +1,20 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= title
+        link(rel="stylesheet", href="../css/style.css")
+    body 
+        include ../partials/header
+        main 
+            div.blog-container 
+                
+                    div.blog-post 
+                        h1.blog-title= blog.title 
+                        p.blog-body= blog.body
+                        if blog.userId == userId
+                            div.buttons
+                                a(href=`/blog-update/${blog._id}`).upd-btn   Update
+                                a(href=`/blog-delete/${blog._id}`).dlt-btn   Delete                  
+            div
+        include ../partials/footer
